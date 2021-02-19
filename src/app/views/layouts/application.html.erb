@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= link_to root_path, class: "navbar-item" do %>
+      <h1 class="title is 4" style="font-family: cursive;">myapp</h1>
+    <%end %>
+
+    <% if user_signed_in? %>
+        <%= link_to "log out", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+    <% else %>
+        <%= link_to "log in", new_user_session_path, class: "button is-warning is-light" %>
+        <%= link_to "sign up", new_user_registration_path, class: "button is-warning is-light" %>
+    <%end%>
+
+
+
+    <%= yield %>
+
+  </body>
+</html>
