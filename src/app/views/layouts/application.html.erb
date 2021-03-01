@@ -17,8 +17,8 @@
       <h1 class="title is 4" style="font-family: cursive;">myapp</h1>
     <%end %>
     <%= link_to "ユーザ一一覧", users_path, calss: "button is-warning is-light" %>
-
-
+　　<%= link_to "投稿一覧", recipes_path, class: "nabar-item button is-warning is-light" %>
+   <%= link_to "新規投稿" ,new_recipe_path%>
     <% if user_signed_in? %>
         <%= link_to "log out", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
     <% else %>
