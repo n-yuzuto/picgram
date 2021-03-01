@@ -16,6 +16,8 @@
     <%= link_to root_path, class: "navbar-item" do %>
       <h1 class="title is 4" style="font-family: cursive;">myapp</h1>
     <%end %>
+    <%= link_to "ユーザ一一覧", users_path, calss: "button is-warning is-light" %>
+
 
     <% if user_signed_in? %>
         <%= link_to "log out", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
